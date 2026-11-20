@@ -1,0 +1,35 @@
+:root {
+  color-scheme: light dark;
+  --fg: var(--color-text-primary, #1f2328);
+  --muted: var(--color-text-secondary, #6b7280);
+  --line: var(--color-border-primary, #e5e7eb);
+  --card: var(--color-background-secondary, #f6f7f8);
+  --accent: #2563eb;
+  --error: #dc2626;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fg: var(--color-text-primary, #e5e7eb); --muted: var(--color-text-secondary, #9ca3af);
+          --line: var(--color-border-primary, #374151); --card: var(--color-background-secondary, #1f2937); --accent: #60a5fa; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 14px; color: var(--fg); background: transparent; font-size: 13px; line-height: 1.45; }
+h2 { font-size: 15px; margin: 16px 0 8px; }
+h3 { font-size: 13px; margin: 16px 0 6px; color: var(--muted); font-family: var(--font-mono, ui-monospace, monospace); }
+.muted { color: var(--muted); margin-top: 4px; }
+.drop { border: 2px dashed var(--line); border-radius: 12px; padding: 20px; text-align: center; cursor: pointer; }
+.drop.over { border-color: var(--accent); }
+.drop button { border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.status { margin: 10px 0; color: var(--muted); }
+.status.error { color: var(--error); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
+.card { background: var(--card); border-radius: 10px; padding: 10px; }
+.card span { color: var(--muted); }
+.card b { display: block; font-size: 18px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+th, td { padding: 4px 8px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
+thead th { color: var(--fg); font-weight: 600; vertical-align: bottom; }
+tbody th { text-align: left; color: var(--muted); font-weight: 600; font-family: var(--font-mono, ui-monospace, monospace); }
+.dtype { font-weight: 400; color: var(--muted); font-size: 11px; font-family: var(--font-mono, ui-monospace, monospace); }
+tr.missing td, tr.missing th { color: var(--muted); }
